@@ -40,7 +40,7 @@ public class IniUtil {
      */
     public static Ini getIni(String name, Ini defaultIni) {
         try {
-            Ini ini = IniFile.getInstance(new File(name));
+            Ini ini = IniFile.getIni(new File(name));
             if (defaultIni != null)
                 ini.copyFrom(defaultIni, false);
             return ini;

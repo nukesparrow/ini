@@ -30,7 +30,7 @@ public final class IniFile extends Ini {
 
     public static Ini initialize(String path) {
         try {
-            return getInstance(new File(path));
+            return getIni(new File(path));
         } catch (IOException ex) {
             LOG.log(Level.SEVERE, null, ex);
             return new Ini();
@@ -39,7 +39,11 @@ public final class IniFile extends Ini {
 
     private static final HashMap<File, IniFile> instances = new HashMap<File, IniFile>();
 
-    public static synchronized IniFile getInstance(File file) throws IOException {
+    public static synchronized IniFile getIni(String file) throws IOException {
+        return getIni(new File(file));
+    }
+
+    public static synchronized IniFile getIni(File file) throws IOException {
         IniFile ini = instances.get(file);
         if (ini == null)
             instances.put(file, ini = new IniFile(file));
@@ -62,6 +66,14 @@ public final class IniFile extends Ini {
 
     public boolean isAutoSaveEnabled() {
         return autoSaveEnabled;
+    }
+    
+    public void enableAutoSave() {
+        setAutoSaveEnabled(true);
+    }
+
+    public void disableAutoSave() {
+        setAutoSaveEnabled(false);
     }
 
     public void setAutoSaveEnabled(boolean autoSaveEnabled) {
