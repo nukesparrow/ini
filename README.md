@@ -5,7 +5,8 @@ I don't know what to say here. Suggest something.
 
 ## Basic usage examples
 
-```java    public static void readExample() throws IOException {
+```java
+    public static void readExample() throws IOException {
         // returns null for missing key
         IniFile.getIni("f.ini").get("stringKey");
         
@@ -40,4 +41,5 @@ I don't know what to say here. Suggest something.
         }
         
         IniFile.getIni("f.ini").saveIfModified();
-    }```
+    }
+```
