@@ -1,5 +1,4 @@
 
-import com.bb.ini.POJOTest;
 import java.io.IOException;
 import nukesparrow.ini.IniFile;
 import nukesparrow.ini.IniKeyName;
@@ -92,7 +91,7 @@ public class Examples {
         
         p = IniUtil.loadPOJO(IniFile.getIni("f.ini"), new POJO());
         // or
-        p = IniUtil.loadPOJO(IniFile.getIni("f.ini").section("pojo"), new POJO());
+        p = IniUtil.loadPOJO(IniFile.getIni("f.ini").section(""), new POJO());
         
     }
 

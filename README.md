@@ -41,4 +41,36 @@ I've written more convenient (imho) ini reader/writer, than I've found on the in
         
         IniFile.getIni("f.ini").saveIfModified();
     }
+
+    public static class POJO {
+        // pojo loader can update annotated fields
+        @IniKeyName("boolean")
+        public boolean bool = false;
+        @IniKeyName("int")
+        public int integer = -1;
+
+        // pojo loader can update fields without annotations, by field names
+        public long lng = -1;
+        public short shrt = -1;
+        public byte bte = -1;
+        public char chr = 'b';
+        
+        // pojo loader can update properties
+        String prop;
+        public void setProp(String s) {
+            prop = s;
+        }
+        public String getProp() {
+            return prop;
+        }
+    }
+    
+    public static void readToPOJO() throws IOException {
+        POJO p;
+        
+        p = IniUtil.loadPOJO(IniFile.getIni("f.ini"), new POJO());
+        // or
+        p = IniUtil.loadPOJO(IniFile.getIni("f.ini").section(""), new POJO());
+        
+    }
 ```
