@@ -88,7 +88,12 @@ public class Examples {
     }
     
     public static void readToPOJO() throws IOException {
-        POJO p = IniUtil.loadPOJO(IniFile.getIni("f.ini"), new POJO());
+        POJO p;
+        
+        p = IniUtil.loadPOJO(IniFile.getIni("f.ini"), new POJO());
+        // or
+        p = IniUtil.loadPOJO(IniFile.getIni("f.ini").section("pojo"), new POJO());
+        
     }
 
 }
