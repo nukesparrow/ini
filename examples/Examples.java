@@ -1,6 +1,9 @@
 
+import com.bb.ini.POJOTest;
 import java.io.IOException;
 import nukesparrow.ini.IniFile;
+import nukesparrow.ini.IniKeyName;
+import nukesparrow.ini.IniUtil;
 
 /*
  * Copyright 2015 Nuke Sparrow <nukesparrow@bitmessage.ch>.
@@ -59,6 +62,33 @@ public class Examples {
         }
         
         IniFile.getIni("f.ini").saveIfModified();
+    }
+    
+    public static class POJO {
+        // pojo loader can update annotated fields
+        @IniKeyName("boolean")
+        public boolean bool = false;
+        @IniKeyName("int")
+        public int integer = -1;
+
+        // pojo loader can update fields without annotations, by field names
+        public long lng = -1;
+        public short shrt = -1;
+        public byte bte = -1;
+        public char chr = 'b';
+        
+        // pojo loader can update properties
+        String prop;
+        public void setProp(String s) {
+            prop = s;
+        }
+        public String getProp() {
+            return prop;
+        }
+    }
+    
+    public static void readToPOJO() throws IOException {
+        POJO p = IniUtil.loadPOJO(IniFile.getIni("f.ini"), new POJO());
     }
 
 }
