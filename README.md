@@ -1,4 +1,4 @@
-# Nuke's Ini File Adapter
+# Ini File Adapter
 
 I've written more convenient (imho) ini reader/writer, than I've found on the internet.
 I don't know what to say here. Suggest something.
