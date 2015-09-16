@@ -70,7 +70,7 @@ I've written more convenient (imho) ini reader/writer, than I've found on the in
         
         p = IniUtil.loadPOJO(IniFile.getIni("f.ini"), new POJO());
         // or
-        p = IniUtil.loadPOJO(IniFile.getIni("f.ini").section(""), new POJO());
+        p = IniUtil.loadPOJO(IniFile.getIni("f.ini").section("somesection"), new POJO());
         
     }
 ```

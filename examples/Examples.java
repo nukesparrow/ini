@@ -91,7 +91,7 @@ public class Examples {
         
         p = IniUtil.loadPOJO(IniFile.getIni("f.ini"), new POJO());
         // or
-        p = IniUtil.loadPOJO(IniFile.getIni("f.ini").section(""), new POJO());
+        p = IniUtil.loadPOJO(IniFile.getIni("f.ini").section("somesection"), new POJO());
         
     }
 
