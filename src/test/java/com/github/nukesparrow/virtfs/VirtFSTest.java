@@ -7,8 +7,6 @@
  */
 package com.github.nukesparrow.virtfs;
 
-import com.github.nukesparrow.virtfs.VFilesystem;
-import com.github.nukesparrow.virtfs.ZipFilesystem;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
