@@ -25,7 +25,7 @@
     </scm>
     
     <modelVersion>4.0.0</modelVersion>
-    <groupId>nukesparrow</groupId>
+    <groupId>com.github.nukesparrow</groupId>
     <artifactId>ini</artifactId>
     <version>2015.09.16</version>
     <packaging>jar</packaging>
