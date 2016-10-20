@@ -15,7 +15,7 @@
  */
 package com.github.nukesparrow.util;
 
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
@@ -27,7 +27,7 @@ import java.nio.charset.Charset;
 public class IOUtils {
 
     public static byte[] toByteArray(InputStream in) throws IOException {
-        ByteOutputStream o = new ByteOutputStream();
+        ByteArrayOutputStream o = new ByteArrayOutputStream();
         byte[] buf = new byte[Math.max(4096, in.available())];
         
         for(;;) {
@@ -39,7 +39,7 @@ public class IOUtils {
             o.write(buf, 0, nr);
         }
         
-        return o.getBytes();
+        return o.toByteArray();
     }
 
     public static String toString(InputStream in, Charset charset) throws IOException {
