@@ -18,7 +18,6 @@ package com.github.nukesparrow.util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
-import org.apache.commons.io.IOUtils;
 
 /**
  *
