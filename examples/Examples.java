@@ -1,8 +1,8 @@
 
 import java.io.IOException;
-import nukesparrow.ini.IniFile;
-import nukesparrow.ini.IniKeyName;
-import nukesparrow.ini.IniUtil;
+import com.github.nukesparrow.ini.IniFile;
+import com.github.nukesparrow.ini.IniKeyName;
+import com.github.nukesparrow.ini.IniUtil;
 
 /*
  * Copyright 2015 Nuke Sparrow <nukesparrow@bitmessage.ch>.
